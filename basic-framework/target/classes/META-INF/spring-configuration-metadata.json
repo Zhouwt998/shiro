@@ -1,0 +1,11 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.zgtech.edu.basicframework.kernel.configure.RedisCacheConfigure",
+      "name": "spring.redis",
+      "type": "com.zgtech.edu.basicframework.kernel.configure.RedisCacheConfigure"
+    }
+  ],
+  "properties": []
+}

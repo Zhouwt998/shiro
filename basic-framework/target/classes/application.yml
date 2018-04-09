@@ -1,0 +1,53 @@
+logging:
+  level:
+    root: info
+    org.nutz: debug
+
+spring:
+  aop:
+    auto: true
+    proxy-target-class: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nutrimeal?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: org.postgresql.Driver
+#    url: jdbc:mysql://localhost:3306/apollo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+#    driver-class-name: com.mysql.jdbc.Driver
+    username: postgres
+    password: 123456
+    druid:
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      maxActive: 50
+      initialSize: 3
+      maxWait: 60000
+      minIdle: 3
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+      aop-patterns: com.zgtech.kernel.functions.*
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: Redis!123
+    timeout: 5000
+
+nutz:
+  json:
+    auto-unicode: false
+    quote-name: true
+    ignore-null: true
+    null-as-emtry: true
+    enabled: true
+  dao:
+    runtime:
+      create: true
+      migration: false
+      basepackage: com.zgtech.edu.basicframework.kernel.model.mapped
+    sqlmanager:
+      paths:
+        - sqls

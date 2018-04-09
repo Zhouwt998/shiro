@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    @!if(has(msg)){
+        <h1>${msg}</h1>
+    @!}else{
+        <form action="/api/food/${food.foodId}" method="post">
+            <input type="hidden" name="foodId" value="${food.foodId}">
+            菜品名称:<input type="text" name="name" value="${food.name}"/></br>
+            就餐日期:<input type="text" name="repastDate" value="${food.repastDate}"/></br>
+            菜品原材料:<input type="text" name="raw" value="${food.raw}"/></br>
+            类别:<input type="text" name="foodType" value="${food.foodType}"/></br>
+            工艺:<input type="text" name="craft" value="${food.craft}"/></br>
+            形状:<input type="text" name="shape" value="${food.shape}"/></br>
+            口味:<input type="text" name="taste" value="${food.taste}"/></br>
+            蛋白质:<input type="text" name="protein" value="${food.protein}"/></br>
+            脂肪:<input type="text" name="fat" value="${food.fat}"/></br>
+            碳水化合物:<input type="text" name="carbohydrate" value="${food.carbohydrate}"/></br>
+            矿物质:<input type="text" name="mineral" value="${food.mineral}"/></br>
+            膳食纤维:<input type="text" name="fiber" value="${food.fiber}"/></br>
+            url:<input type="text" name="foodUrl" value="${food.foodUrl}"/></br>
+            <input type="submit" value="提交"/>
+    </form>
+    @!}
+</body>
+</html>
